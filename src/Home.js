@@ -7,7 +7,7 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
-
+import NavBar from "./NavBar";
 const networkAvatar = makeStyles(theme => ({
   root: {
     display: "flex",
@@ -58,8 +58,11 @@ export default function Home() {
   const classes = useStyles();
   const picNetWork = networkAvatar();
   return (
+    
     <div className={classes.root}>
+   
       <div className={classes.section1}>
+      
         <Grid container spacing={2} id="grids" >
           <Grid item xs={4}>
             <Paper >

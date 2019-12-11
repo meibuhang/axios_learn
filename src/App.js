@@ -7,6 +7,7 @@ import Home from "./Home";
 import Register from "./Register";
 import Login from "./Login";
 import OneZero from "./OneZero";
+import Article from "./Article";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import ScrollMenu from "react-horizontal-scrolling-menu";
@@ -16,7 +17,8 @@ const list = [
   { name: "Home", target: "/home" },
   { name: "OneZero", target: "/onezero" },
   { name: "Login", target: "/login" },
-  { name: "Register", target: "/register" }
+  { name: "Register", target: "/register" },
+  { name: "Article", target: "/article" }
 ];
 
 // One item component
@@ -56,7 +58,6 @@ class App extends Component {
     // call it again if items count changes
     this.menuItems = Menu(list, selected);
   }
-
   state = {
     selected
   };
@@ -89,6 +90,7 @@ class App extends Component {
             <Route path="/" exact component={Home} />
             <Route path="/Home" exact component={Home} />
             <Route path="/OneZero" exact component={OneZero} />
+            <Route path="/Article" component={Article} />
             <Route path="/Register" component={Register} />
             <Route path="/Login" component={Login} />
           </Switch>

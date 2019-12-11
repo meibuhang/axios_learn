@@ -402,7 +402,7 @@ export default function CenteredGrid() {
           <Divider variant="middle" style={{ width: "85%" }} />
           <Link to="/">
             <Box display="flex" p={1} style={{ marginTop: "2%" }}>
-              <Box style={{ width: "50%" }}>
+              <Box style={{ width: "50%", color: "#000000" }}>
                 <div>
                   <Typography
                     variant="h6"
@@ -413,8 +413,35 @@ export default function CenteredGrid() {
                   </Typography>
                 </div>
                 <div>
-                  From Twitter’s spies to complete shutdowns, repressive regimes
-                  are using A.I. and VPN fingerprinting to silence their critics
+                <Typography
+                    variant="subtitle2"
+                    component="h2"
+                    style={{ textAlign: "left" }}
+                  >
+                    From Twitter’s spies to complete shutdowns, repressive
+                    regimes are using A.I. and VPN fingerprinting to silence
+                    their critics
+                  </Typography>
+                </div>
+                <div>
+                <Typography
+                    variant="subtitle2"
+                    component="h2"
+                    style={{ textAlign: "left", marginTop:"7%", fontSize: "12px",color:"#1565c0" }}
+                  >
+                   Meilina
+                  </Typography>
+                
+                </div>
+                <div>
+                <Typography
+                    variant="subtitle2"
+                    component="h2"
+                    style={{ textAlign: "left", fontSize: "12px",color:"#757575"  }}
+                  >
+                  Dec 10 · 24 min read
+                  </Typography>
+                  
                 </div>
               </Box>
               <Box style={{ width: "50%", textAlign: "center" }}>
@@ -432,7 +459,11 @@ export default function CenteredGrid() {
         <div style={{ width: "100%", marginTop: "5%" }}>
           <Divider variant="middle" style={{ width: "85%" }} />
           <Link to="/">
-            <Box display="flex" p={1} style={{ marginTop: "2%" }}>
+            <Box
+              display="flex"
+              p={1}
+              style={{ marginTop: "2%", color: "#000000" }}
+            >
               <Box style={{ width: "50%" }}>
                 <div>
                   <Typography
@@ -444,8 +475,35 @@ export default function CenteredGrid() {
                   </Typography>
                 </div>
                 <div>
-                  From Twitter’s spies to complete shutdowns, repressive regimes
-                  are using A.I. and VPN fingerprinting to silence their critics
+                  <Typography
+                    variant="subtitle2"
+                    component="h2"
+                    style={{ textAlign: "left" }}
+                  >
+                    From Twitter’s spies to complete shutdowns, repressive
+                    regimes are using A.I. and VPN fingerprinting to silence
+                    their critics
+                  </Typography>
+                </div>
+                <div>
+                <Typography
+                    variant="subtitle2"
+                    component="h2"
+                    style={{ textAlign: "left", marginTop:"7%", fontSize: "12px",color:"#1565c0" }}
+                  >
+                   Meilina
+                  </Typography>
+                
+                </div>
+                <div>
+                <Typography
+                    variant="subtitle2"
+                    component="h2"
+                    style={{ textAlign: "left", fontSize: "12px",color:"#757575"  }}
+                  >
+                  Dec 10 · 24 min read
+                  </Typography>
+                  
                 </div>
               </Box>
               <Box style={{ width: "50%", textAlign: "center" }}>
