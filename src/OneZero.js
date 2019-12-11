@@ -54,7 +54,8 @@ const oneZero = makeStyles(theme => ({
     width: "70%",
     marginLeft: "15%",
     textAlign: "center",
-    lineHeight: "35px"
+    lineHeight: "35px",
+    color:"#000000"
   },
   author: {
     fontFamily: ["Roboto", "Arial", "sans-serif"].join(","),
@@ -401,7 +402,7 @@ export default function CenteredGrid() {
         <div style={{ width: "100%", marginTop: "5%" }}>
           <Divider variant="middle" style={{ width: "85%" }} />
           <Link to="/">
-            <Box display="flex" p={1} style={{ marginTop: "2%" }}>
+            <Box display="flex" p={1} style={{ marginTop: "2%",color:"#000000" }}>
               <Box style={{ width: "50%" }}>
                 <div>
                   <Typography
@@ -413,8 +414,14 @@ export default function CenteredGrid() {
                   </Typography>
                 </div>
                 <div>
-                  From Twitter’s spies to complete shutdowns, repressive regimes
-                  are using A.I. and VPN fingerprinting to silence their critics
+                <Typography
+                    variant="subtitle2"
+                    component="h2"
+                    style={{ textAlign: "left", marginTop:"3%" }}
+                  >From Twitter’s spies to complete shutdowns, repressive regimes
+                  are using A.I. and VPN fingerprinting to silence their critics</Typography>
+                  
+                 
                 </div>
               </Box>
               <Box style={{ width: "50%", textAlign: "center" }}>
@@ -429,10 +436,10 @@ export default function CenteredGrid() {
             </Box>
           </Link>
         </div>
-        <div style={{ width: "100%", marginTop: "5%" }}>
+        <div style={{ width: "100%" }}>
           <Divider variant="middle" style={{ width: "85%" }} />
           <Link to="/">
-            <Box display="flex" p={1} style={{ marginTop: "2%" }}>
+            <Box display="flex" p={1} style={{ marginTop: "2%" , color:"#000000"}}>
               <Box style={{ width: "50%" }}>
                 <div>
                   <Typography
@@ -444,8 +451,14 @@ export default function CenteredGrid() {
                   </Typography>
                 </div>
                 <div>
-                  From Twitter’s spies to complete shutdowns, repressive regimes
-                  are using A.I. and VPN fingerprinting to silence their critics
+                <Typography
+                    variant="subtitle2"
+                    component="h2"
+                    style={{ textAlign: "left", marginTop:"3%" }}
+                  >From Twitter’s spies to complete shutdowns, repressive regimes
+                  are using A.I. and VPN fingerprinting to silence their critics</Typography>
+                  
+                  
                 </div>
               </Box>
               <Box style={{ width: "50%", textAlign: "center" }}>
