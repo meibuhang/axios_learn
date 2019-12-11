@@ -74,7 +74,7 @@ class App extends Component {
        
           <NavBar />
 
-          <div>
+          <div className="App">
             <ScrollMenu
               data={menu}
               arrowLeft={ArrowLeft}

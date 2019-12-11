@@ -11,6 +11,7 @@ import Avatar from "@material-ui/core/Avatar";
 const networkAvatar = makeStyles(theme => ({
   root: {
     display: "flex",
+    
     "& > *": {
       margin: theme.spacing(1)
     }
@@ -27,19 +28,25 @@ const networkAvatar = makeStyles(theme => ({
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    flex:"1 1 0%",
+    flexDirection: "row",
     width: "100%",
     marginRight:"150px",
     backgroundColor: theme.palette.background.paper
   },
 
   card: {
-    maxWidth: 345
+    maxWidth: "345%",
+    
   },
   media: {
     height: 140
   },
   section2: {
     margin: theme.spacing(2)
+  },
+  section1: {
+    margin: theme.spacing(1)
   }
 }));
 const seeAllFeatured = {
@@ -53,7 +60,7 @@ export default function Home() {
   return (
     <div className={classes.root}>
       <div className={classes.section1}>
-        <Grid container spacing={2} >
+        <Grid container spacing={2} id="grids" >
           <Grid item xs={4}>
             <Paper >
               <div className="firstCard">
@@ -343,9 +350,9 @@ export default function Home() {
                       How to Remove Array Duplicates in ES6
                     </Typography>
                     <Typography
-                      variant="caption"
+                      variant="h6"
                       color="textSecondary"
-                      component="body"
+                      component="h2"
                       align="left"
                     >
                       Lizards are a widespread group of squamate reptiles, with
@@ -378,9 +385,8 @@ export default function Home() {
                       How to Remove Array Duplicates in ES6
                     </Typography>
                     <Typography
-                      variant="caption"
+                      variant="h6"
                       color="textSecondary"
-                      component="body"
                       align="left"
                     >
                       Lizards are a widespread group of squamate reptiles, with
@@ -413,9 +419,9 @@ export default function Home() {
                       How to Remove Array Duplicates in ES6
                     </Typography>
                     <Typography
-                      variant="caption"
+                      variant="h6"
                       color="textSecondary"
-                      component="body"
+                      component="h2"
                       align="left"
                     >
                       Lizards are a widespread group of squamate reptiles, with

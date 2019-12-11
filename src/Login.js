@@ -18,6 +18,7 @@ const bgform={
   backgroundImage:"url('https://cdn-images-1.medium.com/max/900/1*gnUBeL-INIVDk0_GyL8x1g.png')",
   backgroundRepeat: 'no-repeat',
   backgroundSize:'cover',
+  backgroundPosition: "50% 50%",
 };
 
 
@@ -30,7 +31,7 @@ export default function Register() {
         <CardContent style={bgform}>
         
           <div>
-            <h2>Welcome Back.</h2>
+            <h2 style={{textAlign:"center"}}>Welcome Back.</h2>
             <div className="tagForm">
               <p>
               Sign in to get personalized story recommendations, follow authors and topics you love, 
