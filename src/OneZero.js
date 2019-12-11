@@ -456,7 +456,7 @@ export default function CenteredGrid() {
                     component="h2"
                     style={{ textAlign: "left", marginTop:"3%" }}
                   >From Twitter’s spies to complete shutdowns, repressive regimes
-                  are using A.I. and VPN fingerprinting to silence their critics</Typography>
+                  are using A.I. and VPN fingerprinting to silence their critics.</Typography>
                   
                   
                 </div>
