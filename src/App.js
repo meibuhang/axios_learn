@@ -1,79 +1,80 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./App.css";
-import Button from '@material-ui/core/Button';
-import NavBar from "./NavBar";
+// import Button from "@material-ui/core/Button";
+// import NavBar from "./NavBar";
 import Home from "./Home";
 import Register from "./Register";
 import Login from "./Login";
 import OneZero from "./OneZero";
 import Article from "./Article";
+import ZeroBar from "./ZeroBar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import ScrollMenu from "react-horizontal-scrolling-menu";
+// import ScrollMenu from "react-horizontal-scrolling-menu";
 
-// list of items
-const list = [
-  { name: "Home", target: "/home" },
-  { name: "OneZero", target: "/onezero" },
-  { name: "Login", target: "/login" },
-  { name: "Register", target: "/register" },
-  { name: "Article", target: "/article" }
-];
+// // list of items
+// const list = [
+//   { name: "Home", target: "/home" },
+//   { name: "OneZero", target: "/onezero" },
+//   { name: "Login", target: "/login" },
+//   { name: "Register", target: "/register" },
+//   { name: "Article", target: "/article" }
+// ];
 
-// One item component
-// selected prop will be passed
-const MenuItem = ({ text, target, selected }) => {
-  return (
-    <div className={`menu-item  ${selected ? "active" : ""}`}>
-      <Link to={target}><Button>{text}</Button></Link>
-    </div>
-  );
-};
+// // One item component
+// // selected prop will be passed
+// const MenuItem = ({ text, target, selected }) => {
+//   return (
+//     <div className={`menu-item  ${selected ? "active" : ""}`}>
+//       <Link to={target}>
+//         <Button>{text}</Button>
+//       </Link>
+//     </div>
+//   );
+// };
 
-// All items component
-// Important! add unique key
-export const Menu = (list, selected) =>
-  list.map(el => {
-    const name = el.name;
-    const target = el.target;
+// // All items component
+// // Important! add unique key
+// export const Menu = (list, selected) =>
+//   list.map(el => {
+//     const name = el.name;
+//     const target = el.target;
 
-    return (
-      <MenuItem text={name} target={target} key={name} selected={selected} />
-    );
-  });
+//     return (
+//       <MenuItem text={name} target={target} key={name} selected={selected} />
+//     );
+//   });
 
-const Arrow = ({ text, className }) => {
-  return <div className={className}>{text}</div>;
-};
+// const Arrow = ({ text, className }) => {
+//   return <div className={className}>{text}</div>;
+// };
 
-const ArrowLeft = Arrow({ text: "<", className: "arrow-prev" });
-const ArrowRight = Arrow({ text: ">", className: "arrow-next" });
+// const ArrowLeft = Arrow({ text: "<", className: "arrow-prev" });
+// const ArrowRight = Arrow({ text: ">", className: "arrow-next" });
 
-const selected = "item1";
+// const selected = "item1";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    // call it again if items count changes
-    this.menuItems = Menu(list, selected);
-  }
-  state = {
-    selected
-  };
+  // constructor(props) {
+  //   super(props);
+  //   // call it again if items count changes
+  //   this.menuItems = Menu(list, selected);
+  // }
+  // state = {
+  //   selected
+  // };
 
-  onSelect = key => {
-    this.setState({ selected: key });
-  };
+  // onSelect = key => {
+  //   this.setState({ selected: key });
+  // };
 
   render() {
-    const { selected } = this.state;
-    // Create menu from items
-    const menu = this.menuItems;
+    // const { selected } = this.state;
+    // // Create menu from items
+    // const menu = this.menuItems;
     return (
       <Router>
-       
-          <NavBar />
+        {/* <NavBar />
 
           <div className="App">
             <ScrollMenu
@@ -83,18 +84,19 @@ class App extends Component {
               selected={selected}
               onSelect={this.onSelect}
             />
-          </div>
+          </div> */}
 
-          {/* <Nav /> */}
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/Home" exact component={Home} />
-            <Route path="/OneZero" exact component={OneZero} />
-            <Route path="/Article" component={Article} />
-            <Route path="/Register" component={Register} />
-            <Route path="/Login" component={Login} />
-          </Switch>
-     
+        {/* <Nav /> */}
+
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/home" exact component={Home} />
+          <Route path="/zerobar" exact component={ZeroBar} />
+          <Route path="/onezero" exact component={OneZero} />
+          <Route path="/article" component={Article} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+        </Switch>
       </Router>
     );
   }
