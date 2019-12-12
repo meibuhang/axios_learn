@@ -9,6 +9,8 @@ import AlternateEmailIcon from "@material-ui/icons/AlternateEmail";
 import LockIcon from "@material-ui/icons/Lock";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
+
+import Container from "@material-ui/core/Container";
 const useStyles = makeStyles(theme => ({
   margin: {
     margin: theme.spacing(1)
@@ -26,6 +28,7 @@ export default function Register() {
   const classes = useStyles();
 
   return (
+    <Container maxWidth="lg">
     <div className="formRegister">
       <Card>
         <CardContent style={bgform}>
@@ -101,5 +104,6 @@ export default function Register() {
         </CardContent>
       </Card>
     </div>
+    </Container>
   );
 }

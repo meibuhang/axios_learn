@@ -12,9 +12,10 @@ import SearchIcon from "@material-ui/icons/Search";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import MoreIcon from "@material-ui/icons/MoreVert";
-import Avatar from '@material-ui/core/Avatar';
-import green from '@material-ui/core/colors/green';
+import Avatar from "@material-ui/core/Avatar";
+import green from "@material-ui/core/colors/green";
 
+import { Link } from "react-router-dom";
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1
@@ -76,23 +77,23 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     [theme.breakpoints.up("md")]: {
       display: "none"
-    },
+    }
   },
   root: {
-    display: 'flex',
-    '& > *': {
-      margin: theme.spacing(1),
-    },
+    display: "flex",
+    "& > *": {
+      margin: theme.spacing(1)
+    }
   },
   green: {
-    color: '#fff',
+    color: "#fff",
     backgroundColor: green[900]
-  },
+  }
 }));
 
 export default function NavBar() {
   const classes = useStyles();
-  
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -165,8 +166,8 @@ export default function NavBar() {
           color="inherit"
         >
           <div className={classes.root}>
-                <Avatar className={classes.green}>R</Avatar>
-              </div>
+            <Avatar className={classes.green}>R</Avatar>
+          </div>
         </IconButton>
       </MenuItem>
     </Menu>
@@ -174,7 +175,7 @@ export default function NavBar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" color="inherit">
+      <AppBar position="static" color="inherit" style={{ boxShadow: "none" }}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -183,7 +184,10 @@ export default function NavBar() {
             aria-label="open drawer"
           ></IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Medium
+            <Link to="/home" style={{ color: "#000000" }}>
+              {" "}
+              Medium
+            </Link>
           </Typography>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
@@ -198,9 +202,9 @@ export default function NavBar() {
                 <NotificationsNoneIcon />
               </Badge>
             </IconButton>
-           
-              <Button> Upgrade</Button>
-            
+
+            <Button> Upgrade</Button>
+
             <IconButton
               edge="end"
               aria-label="account of current user"

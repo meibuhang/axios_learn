@@ -1,4 +1,3 @@
-import CardContent from "@material-ui/core/CardContent";
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
@@ -7,11 +6,14 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
-import NavBar from "./NavBar";
+import Container from "@material-ui/core/Container";
+import Header from "./component/Header";
+import CardContent from "@material-ui/core/CardContent";
+
 const networkAvatar = makeStyles(theme => ({
   root: {
     display: "flex",
-    
+
     "& > *": {
       margin: theme.spacing(1)
     }
@@ -28,16 +30,15 @@ const networkAvatar = makeStyles(theme => ({
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    flex:"1 1 0%",
+    flex: "1 1 0%",
     flexDirection: "row",
     width: "100%",
-    marginRight:"150px",
+    marginRight: "150px",
     backgroundColor: theme.palette.background.paper
   },
 
   card: {
-    maxWidth: "345%",
-    
+    maxWidth: "345%"
   },
   media: {
     height: 140
@@ -58,14 +59,12 @@ export default function Home() {
   const classes = useStyles();
   const picNetWork = networkAvatar();
   return (
-    
     <div className={classes.root}>
-   
+      <Header />
       <div className={classes.section1}>
-      
-        <Grid container spacing={2} id="grids" >
+        <Grid container spacing={2} id="grids">
           <Grid item xs={4}>
-            <Paper >
+            <Paper>
               <div className="firstCard">
                 <img
                   src="https://unsplash.it/800/600?image=87"
@@ -113,7 +112,7 @@ export default function Home() {
                 </Grid>
               </div>
             </Paper>
-            <Paper >
+            <Paper>
               <div className="midle">
                 <img
                   src="https://unsplash.it/800/600?image=23"
@@ -151,7 +150,7 @@ export default function Home() {
                 </Grid>
               </div>
             </Paper>
-            <Paper >
+            <Paper>
               <div className="midle">
                 <img
                   src="https://unsplash.it/800/600?image=12"
@@ -172,7 +171,7 @@ export default function Home() {
             </Paper>
           </Grid>
           <Grid item xs={4}>
-            <Paper >
+            <Paper>
               <div className="firstCardRight">
                 <img
                   src="https://unsplash.it/800/600?image=75"
@@ -219,7 +218,7 @@ export default function Home() {
         <Grid container spacing={2}>
           <Grid item xs={7}>
             <Grid>
-              <Paper >
+              <Paper>
                 <div className="midle">
                   <Grid>
                     <div className="titleArticle">
@@ -247,7 +246,7 @@ export default function Home() {
                 </div>
               </Paper>
               <Grid>
-                <Paper >
+                <Paper>
                   <div className="midle">
                     <Grid>
                       <div className="titleArticle">
@@ -276,7 +275,7 @@ export default function Home() {
                 </Paper>
               </Grid>
               <Grid>
-                <Paper >
+                <Paper>
                   <div className="midle">
                     <Grid>
                       <div className="titleArticle">
@@ -332,13 +331,12 @@ export default function Home() {
               </Paper>
             </Grid>
             {/* akhir bagian atas */}
-    
-            <Grid>
-              <Paper >
-              <Grid>
 
-              <div className="midle bottomSide">
-                <div
+            <Grid>
+              <Paper>
+                <Grid>
+                  <div className="midle bottomSide">
+                    <div
                       className={picNetWork.root}
                       style={{ marginTop: "10px", marginLeft: "40px" }}
                     >
@@ -348,66 +346,30 @@ export default function Home() {
                         className={picNetWork.smallAvatar}
                       />
                     </div>
-                  <div style={{ marginTop: "10px", marginLeft: "30px" }}>
-                    <Typography variant="h6" component="h6" align="left">
-                      How to Remove Array Duplicates in ES6
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      color="textSecondary"
-                      component="h2"
-                      align="left"
-                    >
-                      Lizards are a widespread group of squamate reptiles, with
-                      over 6,000 species, ranging across all continents except
-                      Antarctica
-                    </Typography>
-                  </div>
-                </div>
-              </Grid>
-          
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper >
-              <Grid>
-
-              <div className="midle">
-                <div
-                      className={picNetWork.root}
-                      style={{ marginTop: "10px", marginLeft: "40px" }}
-                    >
-                      <Avatar
-                        alt="picture Network"
-                        src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg"
-                        className={picNetWork.smallAvatar}
-                      />
+                    <div style={{ marginTop: "10px", marginLeft: "30px" }}>
+                      <Typography variant="h6" component="h6" align="left">
+                        How to Remove Array Duplicates in ES6
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        color="textSecondary"
+                        component="h2"
+                        align="left"
+                      >
+                        Lizards are a widespread group of squamate reptiles,
+                        with over 6,000 species, ranging across all continents
+                        except Antarctica
+                      </Typography>
                     </div>
-                  <div style={{ marginTop: "10px", marginLeft: "30px" }}>
-                    <Typography variant="h6" component="h6" align="left">
-                      How to Remove Array Duplicates in ES6
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      color="textSecondary"
-                      align="left"
-                    >
-                      Lizards are a widespread group of squamate reptiles, with
-                      over 6,000 species, ranging across all continents except
-                      Antarctica
-                    </Typography>
                   </div>
-                </div>
-              </Grid>
-          
+                </Grid>
               </Paper>
             </Grid>
             <Grid>
               <Paper>
-              <Grid>
-
-              <div className="midle">
-                <div
+                <Grid>
+                  <div className="midle">
+                    <div
                       className={picNetWork.root}
                       style={{ marginTop: "10px", marginLeft: "40px" }}
                     >
@@ -417,24 +379,55 @@ export default function Home() {
                         className={picNetWork.smallAvatar}
                       />
                     </div>
-                  <div style={{ marginTop: "10px", marginLeft: "30px" }}>
-                    <Typography variant="h6" component="h6" align="left">
-                      How to Remove Array Duplicates in ES6
-                    </Typography>
-                    <Typography
-                      variant="h6"
-                      color="textSecondary"
-                      component="h2"
-                      align="left"
-                    >
-                      Lizards are a widespread group of squamate reptiles, with
-                      over 6,000 species, ranging across all continents except
-                      Antarctica
-                    </Typography>
+                    <div style={{ marginTop: "10px", marginLeft: "30px" }}>
+                      <Typography variant="h6" component="h6" align="left">
+                        How to Remove Array Duplicates in ES6
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        color="textSecondary"
+                        align="left"
+                      >
+                        Lizards are a widespread group of squamate reptiles,
+                        with over 6,000 species, ranging across all continents
+                        except Antarctica
+                      </Typography>
+                    </div>
                   </div>
-                </div>
-              </Grid>
-          
+                </Grid>
+              </Paper>
+            </Grid>
+            <Grid>
+              <Paper>
+                <Grid>
+                  <div className="midle">
+                    <div
+                      className={picNetWork.root}
+                      style={{ marginTop: "10px", marginLeft: "40px" }}
+                    >
+                      <Avatar
+                        alt="picture Network"
+                        src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg"
+                        className={picNetWork.smallAvatar}
+                      />
+                    </div>
+                    <div style={{ marginTop: "10px", marginLeft: "30px" }}>
+                      <Typography variant="h6" component="h6" align="left">
+                        How to Remove Array Duplicates in ES6
+                      </Typography>
+                      <Typography
+                        variant="h6"
+                        color="textSecondary"
+                        component="h2"
+                        align="left"
+                      >
+                        Lizards are a widespread group of squamate reptiles,
+                        with over 6,000 species, ranging across all continents
+                        except Antarctica
+                      </Typography>
+                    </div>
+                  </div>
+                </Grid>
               </Paper>
             </Grid>
           </Grid>
