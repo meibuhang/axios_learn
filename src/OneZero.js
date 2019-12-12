@@ -6,17 +6,11 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import Divider from "@material-ui/core/Divider";
-import "typeface-roboto";
-import Header from "./component/Header";
-
 const useStyles = makeStyles(theme => ({
   root: {
-    displey: "flex",
     flexGrow: 1,
     flex: "1 1 0%",
-    flexDirection: "row"
-  },
-  conten: {
+    flexDirection: "row",
     margin: "0 80px 0 80px"
   },
   secondRoot: {
@@ -61,7 +55,7 @@ const oneZero = makeStyles(theme => ({
     marginLeft: "15%",
     textAlign: "center",
     lineHeight: "35px",
-    color:"#000000"
+    color: "#000000"
   },
   author: {
     fontFamily: ["Roboto", "Arial", "sans-serif"].join(","),
@@ -125,158 +119,261 @@ const fontHeader = {
   fontSize: "18px"
 };
 
-export default function OneZero() {
+export default function CenteredGrid() {
   const classes = useStyles();
   const header = oneZero();
 
   return (
     <div className={classes.root}>
-      <Header onlyNavbar={true} />
-      <div className={classes.conten}>
-        <Grid container item xs={12} id="grids">
-          <Grid
-            item
-            style={{
-              marginTop: "10px"
-            }}
-          >
-            <Typography variant="h2" align="left" className={header.head}>
-              OneZero
+      <Grid container item xs={12} id="grids">
+        <Grid
+          item
+          style={{
+            marginTop: "10px"
+          }}
+        >
+          <Typography variant="h2" align="left" className={header.head}>
+            OneZero
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          style={{
+            marginTop: "20px",
+            marginLeft: "10px"
+          }}
+        >
+          <div className="paraghraph">
+            <Typography
+              variant="subtitle2"
+              component="h4"
+              style={fontHeader}
+              className="oneZero"
+            >
+              <span>The front lines of the future. </span> A Medium publication
+              about tech and science.
             </Typography>
-          </Grid>
-          <Grid
-            item
-            style={{
-              marginTop: "20px",
-              marginLeft: "10px"
-            }}
-          >
-            <div className="paraghraph">
+          </div>
+        </Grid>
+        <Grid>
+          <div style={{ marginTop: "30%" }}>
+            <Button variant="outlined" color="primary" size="small">
+              Follow
+            </Button>
+          </div>
+        </Grid>
+      </Grid>
+
+      {/* akhir One Zero */}
+      {/* awal artikel */}
+      <Link to="/">
+        <Grid
+          container
+          item
+          xs={12}
+          style={{ marginTop: "20px", marginBottom: "30px" }}
+        >
+          <Grid item xs={5}>
+            <div className="divZero">
+              <Typography variant="h6" component="h2" className={header.center}>
+                The Influencer and the Hit Man
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                component="h2"
+                className={header.paragraph}
+              >
+                How a years-long domain name feud ended in a bloody shootout
+              </Typography>
               <Typography
                 variant="subtitle2"
-                component="h5"
-                style={fontHeader}
-                className="oneZero"
+                component="h2"
+                className={header.author}
+                style={{ color: "#eeff41" }}
               >
-                <span>The front lines of the future. </span> A Medium
-                publication about tech and science.
+                Meilina
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="h2"
+                className={header.dateTime}
+              >
+                Dec 10 · 24 min read
               </Typography>
             </div>
           </Grid>
-          <Grid item>
-            <div style={{ marginTop: "30%" }}>
-              <Button variant="outlined" color="primary" size="small">
-                Follow
-              </Button>
+
+          <Grid item xs={7}>
+            <div>
+              <img
+                src="https://unsplash.it/800/600?image=350"
+                className="mediaZero"
+              />
             </div>
           </Grid>
         </Grid>
-
-        {/* akhir One Zero */}
-        {/* awal artikel */}
-        <Link to="/">
-          <Grid
-            container
-            item
-            xs={12}
-            style={{ marginTop: "20px", marginBottom: "30px" }}
-          >
-            <Grid item xs={12} md={5}>
-              <div className="divZero">
-                <Typography
-                  variant="h6"
-                  component="h2"
-                  className={header.center}
-                >
-                  The Influencer and the Hit Man
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  component="h2"
-                  className={header.paragraph}
-                >
-                  How a years-long domain name feud ended in a bloody shootout
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  className={header.author}
-                  style={{ color: "#eeff41" }}
-                >
-                  Meilina
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  className={header.dateTime}
-                >
-                  Dec 10 · 24 min read
-                </Typography>
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={7}>
-              <div>
-                <img
-                  src="https://unsplash.it/800/600?image=350"
-                  className="mediaZero"
-                />
-              </div>
-            </Grid>
+      </Link>
+      <Link to="/">
+        <Grid
+          container
+          item
+          xs={12}
+          style={{ marginTop: "20px", marginBottom: "30px" }}
+        >
+          <Grid item xs={7}>
+            <div>
+              <img
+                src="https://unsplash.it/800/600?image=550"
+                className="mediaZero"
+              />
+            </div>
           </Grid>
-        </Link>
-        <Link to="/">
-          <Grid
-            container
-            item
-            xs={12}
-            style={{ marginTop: "20px", marginBottom: "30px" }}
-          >
-            <Grid item xs={12} md={5}>
-              <div>
-                <img
-                  src="https://unsplash.it/800/600?image=550"
-                  className="mediaZero"
-                />
-              </div>
-            </Grid>
-            <Grid item xs={12} md={7}>
-              <div className="divZero2">
-                <Typography
-                  variant="h6"
-                  component="h2"
-                  className={header.center}
-                >
-                  The Influencer and the Hit Man
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  component="h2"
-                  className={header.paragraph}
-                >
-                  How a years-long domain name feud ended in a bloody shootout
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  className={header.author}
-                  style={{ color: "#7e57c2" }}
-                >
-                  Meilina
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  className={header.dateTime}
-                >
-                  Dec 10 · 24 min read
-                </Typography>
-              </div>
-            </Grid>
+          <Grid item xs={5}>
+            <div className="divZero2">
+              <Typography variant="h6" component="h2" className={header.center}>
+                The Influencer and the Hit Man
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                component="h2"
+                className={header.paragraph}
+              >
+                How a years-long domain name feud ended in a bloody shootout
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="h2"
+                className={header.author}
+                style={{ color: "#7e57c2" }}
+              >
+                Meilina
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="h2"
+                className={header.dateTime}
+              >
+                Dec 10 · 24 min read
+              </Typography>
+            </div>
           </Grid>
-        </Link>
+        </Grid>
+      </Link>
 
-<<<<<<< HEAD
+      {/* Section 2 */}
+      <Link to="/">
+        <Grid
+          container
+          item
+          xs={12}
+          style={{ marginTop: "20px", marginBottom: "30px" }}
+        >
+          <Grid item xs={5}>
+            <div className="divZero">
+              <Typography variant="h6" component="h2" className={header.center}>
+                The Influencer and the Hit Man
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                component="h2"
+                className={header.paragraph}
+              >
+                How a years-long domain name feud ended in a bloody shootout
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="h2"
+                className={header.author}
+                style={{ color: "#eeff41" }}
+              >
+                Meilina
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="h2"
+                className={header.dateTime}
+              >
+                Dec 10 · 24 min read
+              </Typography>
+            </div>
+          </Grid>
+
+          <Grid item xs={7}>
+            <div>
+              <img
+                src="https://unsplash.it/800/600?image=558"
+                className="mediaZero"
+              />
+            </div>
+          </Grid>
+        </Grid>
+      </Link>
+      <Link to="/">
+        <Grid
+          container
+          item
+          xs={12}
+          style={{ marginTop: "20px", marginBottom: "30px" }}
+        >
+          <Grid item xs={7}>
+            <div>
+              <img
+                src="https://unsplash.it/800/600?image=450"
+                className="mediaZero"
+              />
+            </div>
+          </Grid>
+          <Grid item xs={5}>
+            <div className="divZero2">
+              <Typography variant="h6" component="h2" className={header.center}>
+                The Influencer and the Hit Man
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                component="h2"
+                className={header.paragraph}
+              >
+                How a years-long domain name feud ended in a bloody shootout
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="h2"
+                className={header.author}
+                style={{ color: "#7e57c2" }}
+              >
+                Meilina
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="h2"
+                className={header.dateTime}
+              >
+                Dec 10 · 24 min read
+              </Typography>
+            </div>
+          </Grid>
+        </Grid>
+      </Link>
+      {/* end of Section */}
+      <Link to="/">
+        <Grid container>
+          <Grid item xs={12}>
+            <div className="endZero">
+              <Typography
+                variant="h6"
+                component="h2"
+                className={header.bottoms}
+              >
+                “ We have a few new things to share.”
+              </Typography>
+              <Typography
+                variant="subtitle2"
+                component="h2"
+                style={{ marginTop: "1%", marginLeft: "10%" }}
+              >
+                — Damon Beres
+              </Typography>
+
               <Typography
                 variant="subtitle2"
                 component="h2"
@@ -305,7 +402,11 @@ export default function OneZero() {
         <div style={{ width: "100%", marginTop: "5%" }}>
           <Divider variant="middle" style={{ width: "85%" }} />
           <Link to="/">
-            <Box display="flex" p={1} style={{ marginTop: "2%",color:"#000000" }}>
+            <Box
+              display="flex"
+              p={1}
+              style={{ marginTop: "2%", color: "#000000" }}
+            >
               <Box style={{ width: "50%" }}>
                 <div>
                   <Typography
@@ -317,68 +418,25 @@ export default function OneZero() {
                   </Typography>
                 </div>
                 <div>
-                <Typography
+                  <Typography
                     variant="subtitle2"
                     component="h2"
-                    style={{ textAlign: "left", marginTop:"3%" }}
-                  >From Twitter’s spies to complete shutdowns, repressive regimes
-                  are using A.I. and VPN fingerprinting to silence their critics</Typography>
-                  
-                 
+                    style={{ textAlign: "left", marginTop: "3%" }}
+                  >
+                    From Twitter’s spies to complete shutdowns, repressive
+                    regimes are using A.I. and VPN fingerprinting to silence
+                    their critics
+                  </Typography>
                 </div>
               </Box>
               <Box style={{ width: "50%", textAlign: "center" }}>
-=======
-        {/* Section 2 */}
-        <Link to="/">
-          <Grid
-            container
-            item
-            xs={12}
-            style={{ marginTop: "20px", marginBottom: "30px" }}
-          >
-            <Grid item xs={12} md={5}>
-              <div className="divZero">
-                <Typography
-                  variant="h6"
-                  component="h2"
-                  className={header.center}
-                >
-                  The Influencer and the Hit Man
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  component="h2"
-                  className={header.paragraph}
-                >
-                  How a years-long domain name feud ended in a bloody shootout
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  className={header.author}
-                  style={{ color: "#eeff41" }}
-                >
-                  Meilina
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  className={header.dateTime}
-                >
-                  Dec 10 · 24 min read
-                </Typography>
-              </div>
-            </Grid>
-
-            <Grid item xs={12} md={7}>
-              <div>
->>>>>>> 04b7ac1590f0138fb424eeaa517f757ef81d53fe
                 <img
                   src="https://unsplash.it/800/600?image=558"
-                  className="mediaZero"
+                  style={{
+                    width: "50%",
+                    height: "65%"
+                  }}
                 />
-<<<<<<< HEAD
               </Box>
             </Box>
           </Link>
@@ -386,7 +444,11 @@ export default function OneZero() {
         <div style={{ width: "100%" }}>
           <Divider variant="middle" style={{ width: "85%" }} />
           <Link to="/">
-            <Box display="flex" p={1} style={{ marginTop: "2%" , color:"#000000"}}>
+            <Box
+              display="flex"
+              p={1}
+              style={{ marginTop: "2%", color: "#000000" }}
+            >
               <Box style={{ width: "50%" }}>
                 <div>
                   <Typography
@@ -398,267 +460,28 @@ export default function OneZero() {
                   </Typography>
                 </div>
                 <div>
-                <Typography
+                  <Typography
                     variant="subtitle2"
                     component="h2"
-                    style={{ textAlign: "left", marginTop:"3%" }}
-                  >From Twitter’s spies to complete shutdowns, repressive regimes
-                  are using A.I. and VPN fingerprinting to silence their critics.</Typography>
-                  
-                  
+                    style={{ textAlign: "left", marginTop: "3%" }}
+                  >
+                    From Twitter’s spies to complete shutdowns, repressive
+                    regimes are using A.I. and VPN fingerprinting to silence
+                    their critics.
+                  </Typography>
                 </div>
               </Box>
               <Box style={{ width: "50%", textAlign: "center" }}>
                 <img
                   src="https://unsplash.it/800/600?image=558"
-=======
-              </div>
-            </Grid>
-          </Grid>
-        </Link>
-        <Link to="/">
-          <Grid
-            container
-            item
-            xs={12}
-            style={{ marginTop: "20px", marginBottom: "30px" }}
-          >
-            <Grid item xs={12} md={7}>
-              <div>
-                <img
-                  src="https://unsplash.it/800/600?image=450"
-                  className="mediaZero"
+                  style={{
+                    width: "50%",
+                    height: "65%"
+                  }}
                 />
-              </div>
-            </Grid>
-            <Grid item xs={12} md={5}>
-              <div className="divZero2">
-                <Typography
-                  variant="h6"
-                  component="h2"
-                  className={header.center}
-                >
-                  The Influencer and the Hit Man
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  component="h2"
-                  className={header.paragraph}
-                >
-                  How a years-long domain name feud ended in a bloody shootout
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  className={header.author}
-                  style={{ color: "#7e57c2" }}
-                >
-                  Meilina
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  className={header.dateTime}
-                >
-                  Dec 10 · 24 min read
-                </Typography>
-              </div>
-            </Grid>
-          </Grid>
-        </Link>
-        {/* end of Section */}
-        <Link to="/">
-          <Grid container>
-            <Grid item xs={12} md={12}>
-              <div className="endZero">
-                <Typography
-                  variant="h6"
-                  component="h2"
-                  className={header.bottoms}
-                  style={{ color: "#000000" }}
-                >
-                  “ We have a few new things to share.”
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
->>>>>>> 04b7ac1590f0138fb424eeaa517f757ef81d53fe
-                  style={{
-                    marginTop: "1%",
-                    marginLeft: "10%",
-                    color: "#000000"
-                  }}
-                >
-                  — Damon Beres
-                </Typography>
-
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  style={{
-                    marginTop: "2%",
-                    marginLeft: "10%",
-                    fontWeight: 300,
-                    fontSize: "12px",
-                    color: "#000000"
-                  }}
-                >
-                  Welcome to a Refreshed OneZero
-                </Typography>
-                <Typography
-                  variant="subtitle2"
-                  component="h2"
-                  style={{
-                    marginLeft: "10%",
-                    fontWeight: 300,
-                    fontSize: "12px",
-                    color: "#000000"
-                  }}
-                >
-                  Dec 10 · 24 min read
-                </Typography>
-              </div>
-            </Grid>
-          </Grid>
-        </Link>
-        {/*  Section 3rd 2x margin root*/}
-        <div className={classes.secondRoot}>
-          <div style={{ width: "100%", marginTop: "5%" }}>
-            <Divider variant="middle" style={{ width: "85%" }} />
-            <Link to="/">
-              <Box display="flex" p={1} style={{ marginTop: "2%" }}>
-                <Box style={{ width: "50%", color: "#000000" }}>
-                  <div>
-                    <Typography
-                      variant="h6"
-                      component="h2"
-                      style={{ textAlign: "left" }}
-                    >
-                      Authoritarian Nations Are Turning the Internet Into a
-                      Weapon
-                    </Typography>
-                  </div>
-                  <div>
-                    <Typography
-                      variant="subtitle2"
-                      component="h2"
-                      style={{ textAlign: "left" }}
-                    >
-                      From Twitter’s spies to complete shutdowns, repressive
-                      regimes are using A.I. and VPN fingerprinting to silence
-                      their critics
-                    </Typography>
-                  </div>
-                  <div>
-                    <Typography
-                      variant="subtitle2"
-                      component="h2"
-                      style={{
-                        textAlign: "left",
-                        marginTop: "7%",
-                        fontSize: "12px",
-                        color: "#1565c0"
-                      }}
-                    >
-                      Meilina
-                    </Typography>
-                  </div>
-                  <div>
-                    <Typography
-                      variant="subtitle2"
-                      component="h2"
-                      style={{
-                        textAlign: "left",
-                        fontSize: "12px",
-                        color: "#757575"
-                      }}
-                    >
-                      Dec 10 · 24 min read
-                    </Typography>
-                  </div>
-                </Box>
-                <Box style={{ width: "50%", textAlign: "center" }}>
-                  <img
-                    src="https://unsplash.it/800/600?image=558"
-                    style={{
-                      width: "50%",
-                      height: "65%"
-                    }}
-                  />
-                </Box>
               </Box>
-            </Link>
-          </div>
-          <div style={{ width: "100%", marginTop: "5%" }}>
-            <Divider variant="middle" style={{ width: "85%" }} />
-            <Link to="/">
-              <Box
-                display="flex"
-                p={1}
-                style={{ marginTop: "2%", color: "#000000" }}
-              >
-                <Box style={{ width: "50%" }}>
-                  <div>
-                    <Typography
-                      variant="h6"
-                      component="h2"
-                      style={{ textAlign: "left" }}
-                    >
-                      Authoritarian Nations Are Turning the Internet Into a
-                      Weapon
-                    </Typography>
-                  </div>
-                  <div>
-                    <Typography
-                      variant="subtitle2"
-                      component="h2"
-                      style={{ textAlign: "left" }}
-                    >
-                      From Twitter’s spies to complete shutdowns, repressive
-                      regimes are using A.I. and VPN fingerprinting to silence
-                      their critics
-                    </Typography>
-                  </div>
-                  <div>
-                    <Typography
-                      variant="subtitle2"
-                      component="h2"
-                      style={{
-                        textAlign: "left",
-                        marginTop: "7%",
-                        fontSize: "12px",
-                        color: "#1565c0"
-                      }}
-                    >
-                      Meilina
-                    </Typography>
-                  </div>
-                  <div>
-                    <Typography
-                      variant="subtitle2"
-                      component="h2"
-                      style={{
-                        textAlign: "left",
-                        fontSize: "12px",
-                        color: "#757575"
-                      }}
-                    >
-                      Dec 10 · 24 min read
-                    </Typography>
-                  </div>
-                </Box>
-                <Box style={{ width: "50%", textAlign: "center" }}>
-                  <img
-                    src="https://unsplash.it/800/600?image=558"
-                    style={{
-                      width: "50%",
-                      height: "65%"
-                    }}
-                  />
-                </Box>
-              </Box>
-            </Link>
-          </div>
+            </Box>
+          </Link>
         </div>
       </div>
     </div>

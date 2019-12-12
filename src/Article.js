@@ -6,8 +6,9 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
-import ZeroBar from "./ZeroBar";
+import ZeroBar from "./component/ZeroBar";
 import Header from "./component/Header";
+import Follow from "./Follow";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import BookmarkBorderIcon from "@material-ui/icons/BookmarkBorder";
@@ -49,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function CenteredGrid() {
+export default function Article() {
   const classes = useStyles();
 
   return (
@@ -61,7 +62,7 @@ export default function CenteredGrid() {
           <Grid container id="grids">
             <Grid
               item
-              xs={12}
+              xs={1}
               md={12}
               style={{
                 marginTop: "10px"
@@ -214,7 +215,12 @@ export default function CenteredGrid() {
                 }}
               >
                 <span
-                  style={{ fontWeight: "bold", textDecoration: "underline" }}
+                  style={{
+                    fontWeight: "bold",
+                    color: "#000000",
+                    textDecoration: "underline",
+                    fontStyle: "italic"
+                  }}
                 >
                   Deep Work: Rules for Focused Success in a Distracted World by
                   Cal Newport Media consumption went way up in 2017.{" "}
@@ -230,6 +236,7 @@ export default function CenteredGrid() {
               </p>
             </div>
           </div>
+          <Follow />
         </Container>
       </div>
     </div>

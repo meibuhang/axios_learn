@@ -1,10 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import Tab from "@material-ui/core/Tab";
-import Tabs from "@material-ui/core/Tabs";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
+import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     flexGrow: 1
@@ -13,11 +12,6 @@ const useStyles = makeStyles({
 
 export default function ZeroBar() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   return (
     <div className={classes.root}>
@@ -34,18 +28,31 @@ export default function ZeroBar() {
           <Button href="/home">
             <img src="https://miro.medium.com/max/216/1*IPEsgX_bZKP_7OubdnI7-Q.png" />
           </Button>
-          <Tabs
-            value={value}
-            indicatorColor="primary"
-            textColor="primary"
-            onChange={handleChange}
-          >
-            <Tab
-              label="MISSION ORIGINALS
-"
-            />
-            <Tab label="SUBSCRIBE" />
-          </Tabs>
+          <div style={{ marginTop: "15px", fontFamily: "Raleway" }}>
+            {" "}
+            <Link
+              to=" "
+              style={{
+                margin: "0 10px 0 10px",
+                color: "#9e9e9e",
+                marginLeft: "10px",
+                fontSize: "14px"
+              }}
+            >
+              MISSION ORIGINALS
+            </Link>
+            <Link
+              to=""
+              style={{
+                margin: "0 10px 0 10px",
+                color: "#9e9e9e",
+                marginLeft: "10px",
+                fontSize: "14px"
+              }}
+            >
+              SUBSCRIBE
+            </Link>
+          </div>
         </div>
       </Paper>
     </div>
