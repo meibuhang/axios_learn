@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
 import { Link } from "react-router-dom";
+
 const useStyles = makeStyles({
   root: {
     flexGrow: 1
@@ -25,7 +26,7 @@ export default function ZeroBar() {
             borderBottom: "none"
           }}
         >
-          <Button href="/home">
+          <Button href="/Article">
             <img src="https://miro.medium.com/max/216/1*IPEsgX_bZKP_7OubdnI7-Q.png" />
           </Button>
           <div style={{ marginTop: "15px", fontFamily: "Raleway" }}>

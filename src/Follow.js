@@ -264,15 +264,16 @@ export default function Follow() {
             <Grid container>
               <Grid item xs={12}>
                 <Button
+                  href="/comment"
                   variant="outlined"
-                  size="big"
+                  size="large"
                   style={{
                     borderColor: "#1b5e20",
                     color: "#1b5e20",
                     width: "100%"
                   }}
                 >
-                  Follow
+                  SEE RESPONSES (216)
                 </Button>
               </Grid>
             </Grid>

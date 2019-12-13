@@ -184,7 +184,7 @@ export default function NavBar() {
             aria-label="open drawer"
           ></IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            <Link to="/home" style={{ color: "#000000" }}>
+            <Link to="/" style={{ color: "#000000" }}>
               {" "}
               Medium
             </Link>

@@ -8,6 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import ZeroBar from "./component/ZeroBar";
 import Header from "./component/Header";
+
 import Follow from "./Follow";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import FacebookIcon from "@material-ui/icons/Facebook";

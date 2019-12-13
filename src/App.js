@@ -7,6 +7,7 @@ import Register from "./Register";
 import Login from "./Login";
 import OneZero from "./OneZero";
 import Article from "./Article";
+import Comment from "./Comment";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // import ScrollMenu from "react-horizontal-scrolling-menu";
@@ -92,6 +93,7 @@ class App extends Component {
           <Route path="/home" exact component={Home} />
           <Route path="/onezero" exact component={OneZero} />
           <Route path="/article" component={Article} />
+          <Route path="/comment" exact component={Comment} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
         </Switch>
