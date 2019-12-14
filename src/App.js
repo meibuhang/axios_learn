@@ -7,6 +7,7 @@ import Register from "./Register";
 import Login from "./Login";
 import OneZero from "./OneZero";
 import Bookmark from "./pages/Bookmark";
+import newStory from "./pages/NewStory";
 import Article from "./Article";
 import Comment from "./Comment";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -94,6 +95,7 @@ class App extends Component {
           <Route path="/home" exact component={Home} />
           <Route path="/onezero" exact component={OneZero} />
           <Route path="/article" component={Article} />
+          <Route path="/newstory" exact component={newStory} />
           <Route path="/bookmark" exact component={Bookmark} />
           <Route path="/comment" exact component={Comment} />
           <Route path="/register" component={Register} />
