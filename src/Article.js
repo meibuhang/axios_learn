@@ -8,7 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import ZeroBar from "./component/ZeroBar";
 import Header from "./component/Header";
-
+import RelatedArticle from "./component/RelatedArticle";
 import Follow from "./Follow";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -63,7 +63,7 @@ export default function Article() {
           <Grid container id="grids">
             <Grid
               item
-              xs={1}
+              xs={12}
               md={12}
               style={{
                 marginTop: "10px"
@@ -240,6 +240,7 @@ export default function Article() {
           <Follow />
         </Container>
       </div>
+      <RelatedArticle />
     </div>
   );
 }

@@ -55,6 +55,30 @@ const seeAllFeatured = {
   fontDisplay: "swap",
   color: "#009688"
 };
+
+const LatestUpdateArticleList = [
+  {
+    title: "How to Remove Array Duplicates in ES6",
+    data: {
+      author: "Arfat Salman",
+      category: "Engineering",
+      postDate: "34 March, 2019",
+      totalMinRead: 7,
+      articleImage: "https://unsplash.it/800/600?image=87"
+    }
+  },
+  {
+    title: "How to Remove Array Duplicates in ES6 111",
+    data: {
+      author: "Arfat Salman",
+      category: "Engineering",
+      postDate: "34 March, 2019",
+      totalMinRead: 7,
+      articleImage: "https://unsplash.it/800/600?image=75"
+    }
+  }
+];
+
 export default function Home() {
   const classes = useStyles();
   const picNetWork = networkAvatar();
@@ -93,82 +117,33 @@ export default function Home() {
             </Paper>
           </Grid>
           <Grid item xs={4}>
-            <Paper>
-              <div className="midle">
-                <img
-                  src="https://unsplash.it/800/600?image=15"
-                  className="mediaMidleTop"
-                />
-                <Grid className="gridArticle">
-                  <Typography variant="subtitle2" component="h6">
-                    How to Remove Array Duplicates in ES6
-                  </Typography>
-                  <div className="author">
-                    <span>Arfat Salman in codeburst</span>
-                  </div>
-                  <div className="dateTime">
-                    Mar 24, 2018 <span>7 Min Read</span>
-                  </div>
-                </Grid>
-              </div>
-            </Paper>
-            <Paper>
-              <div className="midle">
-                <img
-                  src="https://unsplash.it/800/600?image=23"
-                  className="mediaMidleTop"
-                />
-                <Grid className="gridArticle">
-                  <Typography variant="subtitle2" component="h6">
-                    How to Remove Array Duplicates in ES6
-                  </Typography>
-                  <div className="author">
-                    <span>Arfat Salman in codeburst</span>
-                  </div>
-                  <div className="dateTime">
-                    Mar 24, 2018 <span>7 Min Read</span>
-                  </div>
-                </Grid>
-              </div>
-            </Paper>
-            <Paper>
-              <div className="midle">
-                <img
-                  src="https://unsplash.it/800/600?image=71"
-                  className="mediaMidleTop"
-                />
-                <Grid className="gridArticle">
-                  <Typography variant="subtitle2" component="h6">
-                    How to Remove Array Duplicates in ES6
-                  </Typography>
-                  <div className="author">
-                    <span>Arfat Salman in codeburst</span>
-                  </div>
-                  <div className="dateTime">
-                    Mar 24, 2018 <span>7 Min Read</span>
-                  </div>
-                </Grid>
-              </div>
-            </Paper>
-            <Paper>
-              <div className="midle">
-                <img
-                  src="https://unsplash.it/800/600?image=12"
-                  className="mediaMidleTop"
-                />
-                <Grid className="gridArticle">
-                  <Typography variant="subtitle2" component="h6">
-                    How to Remove Array Duplicates in ES6
-                  </Typography>
-                  <div className="author">
-                    <span>Arfat Salman in codeburst</span>
-                  </div>
-                  <div className="dateTime">
-                    Mar 24, 2018 <span>7 Min Read</span>
-                  </div>
-                </Grid>
-              </div>
-            </Paper>
+            {LatestUpdateArticleList.map(LatestUpdateArticleData => (
+              <Paper>
+                <div className="midle">
+                  <img
+                    src={LatestUpdateArticleData.data.articleImage}
+                    className="mediaMidleTop"
+                  />
+                  <Grid className="gridArticle">
+                    <Typography variant="subtitle2" component="h6">
+                      {LatestUpdateArticleData.title}
+                    </Typography>
+                    <div className="author">
+                      <span>
+                        {LatestUpdateArticleData.data.author} in{" "}
+                        {LatestUpdateArticleData.data.category}
+                      </span>
+                    </div>
+                    <div className="dateTime">
+                      {LatestUpdateArticleData.data.dateTime}{" "}
+                      <span>
+                        {LatestUpdateArticleData.data.totalMinRead} Min Read
+                      </span>
+                    </div>
+                  </Grid>
+                </div>
+              </Paper>
+            ))}
           </Grid>
           <Grid item xs={4}>
             <Paper>
@@ -347,44 +322,11 @@ export default function Home() {
                       />
                     </div>
                     <div style={{ marginTop: "10px", marginLeft: "30px" }}>
-                      <Typography variant="h6" component="h6" align="left">
+                      <Typography variant="h6" align="left">
                         How to Remove Array Duplicates in ES6
                       </Typography>
                       <Typography
-                        variant="h6"
-                        color="textSecondary"
-                        component="h2"
-                        align="left"
-                      >
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </Typography>
-                    </div>
-                  </div>
-                </Grid>
-              </Paper>
-            </Grid>
-            <Grid>
-              <Paper>
-                <Grid>
-                  <div className="midle">
-                    <div
-                      className={picNetWork.root}
-                      style={{ marginTop: "10px", marginLeft: "40px" }}
-                    >
-                      <Avatar
-                        alt="picture Network"
-                        src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg"
-                        className={picNetWork.smallAvatar}
-                      />
-                    </div>
-                    <div style={{ marginTop: "10px", marginLeft: "30px" }}>
-                      <Typography variant="h6" component="h6" align="left">
-                        How to Remove Array Duplicates in ES6
-                      </Typography>
-                      <Typography
-                        variant="h6"
+                        variant="subtitle"
                         color="textSecondary"
                         align="left"
                       >
@@ -416,9 +358,40 @@ export default function Home() {
                         How to Remove Array Duplicates in ES6
                       </Typography>
                       <Typography
-                        variant="h6"
+                        variant="subtitle"
                         color="textSecondary"
-                        component="h2"
+                        align="left"
+                      >
+                        Lizards are a widespread group of squamate reptiles,
+                        with over 6,000 species, ranging across all continents
+                        except Antarctica
+                      </Typography>
+                    </div>
+                  </div>
+                </Grid>
+              </Paper>
+            </Grid>
+            <Grid>
+              <Paper>
+                <Grid>
+                  <div className="midle">
+                    <div
+                      className={picNetWork.root}
+                      style={{ marginTop: "10px", marginLeft: "40px" }}
+                    >
+                      <Avatar
+                        alt="picture Network"
+                        src="http://upload.wikimedia.org/wikipedia/commons/e/e1/Anne_Hathaway_Face.jpg"
+                        className={picNetWork.smallAvatar}
+                      />
+                    </div>
+                    <div style={{ marginTop: "10px", marginLeft: "30px" }}>
+                      <Typography variant="h6" component="h6" align="left">
+                        How to Remove Array Duplicates in ES6
+                      </Typography>
+                      <Typography
+                        variant="subtitle"
+                        color="textSecondary"
                         align="left"
                       >
                         Lizards are a widespread group of squamate reptiles,

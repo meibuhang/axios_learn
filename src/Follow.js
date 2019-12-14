@@ -30,6 +30,11 @@ const useStyles = makeStyles(theme => ({
   bigAvatar: {
     width: 60,
     height: 60
+  },
+  secondRoot: {
+    flexGrow: 1,
+    flexDirection: "row",
+    paddingBottom: "7%"
   }
 }));
 

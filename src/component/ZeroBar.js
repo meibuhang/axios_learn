@@ -21,9 +21,12 @@ export default function ZeroBar() {
         <div
           style={{
             display: "flex",
+
             margin: "0 40px 0 40px",
             boxShadow: "none",
-            borderBottom: "none"
+            borderBottom: "none",
+            backgroundColor: "#ffffff",
+            width: "100%"
           }}
         >
           <Button href="/Article">
