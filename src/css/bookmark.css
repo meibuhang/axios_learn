@@ -1,0 +1,9 @@
+.root {
+    margin: 10% 20%;
+}
+
+.borderBookmarks {
+    border: 1px solid #acacac;
+    margin-top: 20px;
+    justify-content: center;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./related.css";
+import "../css/related.css";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import Avatar from "@material-ui/core/Avatar";
@@ -104,10 +104,14 @@ class RelatedArticle extends Component {
                             className="avaPic"
                           />
                         </Grid>
-                        <Grid style={{ width: "140px" }}>
+                        <Grid>
                           <div className="authorDateRead">
                             <Typography
-                              style={{ fontSize: "10px", color: "#bdbdbd" }}
+                              style={{
+                                fontSize: "10px",
+                                color: "#bdbdbd",
+                                textAlign: "left"
+                              }}
                             >
                               {relatedArticleData.data.postDate}
                               <span>
@@ -118,7 +122,7 @@ class RelatedArticle extends Component {
                               style={{ fontSize: "10px", color: "#bdbdbd" }}
                             >
                               {relatedArticleData.data.author}
-                              <span>in{relatedArticleData.data.category}</span>
+                              <span> {relatedArticleData.data.category}</span>
                             </Typography>
                           </div>
                         </Grid>
@@ -215,14 +219,15 @@ class RelatedArticle extends Component {
             <Typography
               variant="caption"
               style={{
-                fontSize: "25px",
                 color: "#ececec",
                 textAlign: "left",
-                fontFamily: "'Girassol', cursive"
+                fontFamily: ["Gupter", "Oswald", "Merriweather"].join(","),
+                fontWeight: 700,
+                fontSize: 25
               }}
             >
               {" "}
-              MEDIUM{" "}
+              Medium{" "}
             </Typography>
           </div>
         </div>
