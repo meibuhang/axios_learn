@@ -143,7 +143,12 @@ export default function Article() {
                   className={classes.bigAvatar}
                 />
               </Grid>
-              <Grid item xs={6} lg={6} style={{ width: "50%" }}>
+              <Grid
+                item
+                xs={6}
+                lg={6}
+                style={{ width: "50%", marginTop: "10px" }}
+              >
                 <div style={{ display: "flex" }}>
                   <Typography
                     variant="caption"

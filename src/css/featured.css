@@ -1,0 +1,35 @@
+.root {
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.boxArticle {
+    border: 1px solid #bdbdbd;
+    margin-top: 20px;
+}
+
+.innerBox {
+    width: "100%";
+    padding: "5px"
+}
+
+.mediaFeatured {
+    justify-content: center;
+}
+
+.subtitles {
+    padding-top: 10px;
+}
+
+.subtitle-caption {
+    text-align: left;
+    padding: 0 15px;
+}
+
+.iconclaps {
+    display: flex;
+}
+
+.latestArticle {
+    margin-top: 10%;
+}
