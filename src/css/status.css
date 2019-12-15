@@ -1,0 +1,17 @@
+.root {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.containers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headStats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: "0 auto";
+}
