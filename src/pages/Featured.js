@@ -30,7 +30,7 @@ class Featured extends Component {
               </Grid>
               <Grid
                 item
-                xs={9}
+                xs={10}
                 lg={6}
                 style={{ marginTop: "10px", alignItem: "flex-start" }}
               >
@@ -62,8 +62,11 @@ class Featured extends Component {
                   <StarRateIcon style={{ fontSize: "18px" }} />
                 </div>
               </Grid>
-              <Grid item xs={2} style={{ padding: "20px 0 0 60px" }}>
-                <StarRateIcon />
+
+              <Grid item xs={1} style={{ padding: "20px 0 0 180px" }}>
+                <div style={{ textAlign: "right" }}>
+                  <StarRateIcon />
+                </div>
               </Grid>
             </Grid>
             {/* Media Featured */}
@@ -177,8 +180,10 @@ class Featured extends Component {
                     <StarRateIcon style={{ fontSize: "18px" }} />
                   </div>
                 </Grid>
-                <Grid item xs={2} style={{ padding: "20px 0 0 60px" }}>
-                  <StarRateIcon />
+                <Grid item xs={1} style={{ padding: "20px 0 0 180px" }}>
+                  <div style={{ textAlign: "right" }}>
+                    <StarRateIcon />
+                  </div>
                 </Grid>
               </Grid>
               {/* Media Featured */}

@@ -6,9 +6,6 @@ import Button from "@material-ui/core/Button";
 import NavBar from "../NavBar";
 import Featured from "./Featured";
 import "../css/profil.css";
-import TurnedInIcon from "@material-ui/icons/TurnedIn";
-import { IconButton } from "@material-ui/core";
-import Avatar from "@material-ui/core/Avatar";
 import PropTypes from "prop-types";
 import SwipeableViews from "react-swipeable-views";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
@@ -51,7 +48,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: "#ffffff",
     marginLeft: "10px",
-    width: 700,
+
     alignItems: "left"
   }
 }));
@@ -86,10 +83,8 @@ function ChangeTabs() {
           textColor="primary"
           style={{ alignItem: "left" }}
         >
-          <Tab label="Profile" {...a11yProps(0)} />
-          <Tab label="Claps" {...a11yProps(1)} />
-          <Tab label="Highlight" {...a11yProps(2)} />
-          <Tab label="Responses" {...a11yProps(3)} />
+          <Tab label="Drafts" {...a11yProps(0)} />
+          <Tab label="Published" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -98,107 +93,48 @@ function ChangeTabs() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <Featured />
+          <Typography
+            variant="h4"
+            style={{
+              color: "#616161",
+              textAlign: "center",
+              fontWeight: "bold",
+              margin: "100px auto"
+            }}
+          >
+            {" "}
+            oups..You Have No Data. :(
+          </Typography>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
           Item Two
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Three
-        </TabPanel>
-        <TabPanel value={value} index={3} dir={theme.direction}>
-          Item Three
         </TabPanel>
       </SwipeableViews>
     </div>
   );
 }
 
-export default function Profil() {
+export default function Story() {
   return (
     <div>
       <NavBar />
+
       <div
         style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          paddingBottom: "5%",
-          margin: "0 auto"
+          margin: "0 auto",
+          padding: "50px 50px"
         }}
       >
-        <Grid
-          item
-          xs={6}
+        <Typography variant="h4" style={{ fontWeight: "600" }}>
+          Your Stories
+        </Typography>
+        <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center"
+            paddingTop: "50px"
           }}
         >
-          <div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center"
-              }}
-            >
-              <Typography variant="h5" style={{ marginRight: "10px" }}>
-                Jhon Lennon
-              </Typography>
-              <Button variant="outlined" size="small" color="inherit">
-                edit profile
-              </Button>
-            </div>
-            <div
-              style={{
-                display: "flex",
-
-                paddingTop: "30px"
-              }}
-            >
-              <Typography
-                variant="subtitle2"
-                color="textSecondary"
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  paddingRight: "20px"
-                }}
-              >
-                15 Followers
-              </Typography>
-              <Typography
-                variant="subtitle2"
-                color="textSecondary"
-                style={{
-                  display: "flex",
-                  alignItems: "flex-end"
-                }}
-              >
-                10 Following
-              </Typography>
-            </div>
-          </div>
-          <Avatar
-            src="https://upload.wikimedia.org/wikipedia/commons/9/97/John_Lennon_%28cropped%29.jpg"
-            style={{
-              width: "100px",
-              height: "100px",
-              marginRight: "100px"
-              // fontSize: "60px",
-              // backgroundColor: "#2e7d32"
-            }}
-          ></Avatar>
-        </Grid>
-      </div>
-      <div
-        style={{
-          margin: "0 20%",
-          padding: "0 25px"
-        }}
-      >
-        <ChangeTabs />
+          <ChangeTabs />
+        </div>
       </div>
       {/* Tabs Change */}
     </div>
