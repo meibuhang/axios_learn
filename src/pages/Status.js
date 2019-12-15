@@ -69,8 +69,7 @@ function ChangeTabs() {
           onChange={handleChange}
           aria-label="wrapped label tabs example"
           textColor="primary"
-          indicatorColor="inherit"
-          styles={{ color: "#000000" }}
+          indicatorColor="primary"
         >
           <Tab
             value="one"

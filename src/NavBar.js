@@ -14,8 +14,13 @@ import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import Avatar from "@material-ui/core/Avatar";
 import green from "@material-ui/core/colors/green";
-
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import { Link } from "react-router-dom";
+import Divider from "@material-ui/core/Divider";
+import ImageIcon from "@material-ui/icons/Image";
 const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1
@@ -128,8 +133,63 @@ export default function NavBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <List>
+        <ListItem>
+          <ListItemAvatar>
+            <Avatar className={classes.green}>J</Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="Jhon Lennon" />
+        </ListItem>
+        <Divider />
+        <ListItem>
+          <Link to="/newstory" style={{ color: "#bdbdbd", margin: "0 10px" }}>
+            {" "}
+            <ListItemText primary="New Story" />
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link to="/story" style={{ color: "#bdbdbd", margin: "0 10px" }}>
+            {" "}
+            <ListItemText primary="Stories" />
+          </Link>
+        </ListItem>
+        <ListItem>
+          <Link to="/stats" style={{ color: "#bdbdbd", margin: "0 10px" }}>
+            {" "}
+            <ListItemText primary="Status" />
+          </Link>
+        </ListItem>
+        <Divider />
+        <ListItem>
+          <Link to="/bookmark" style={{ color: "#bdbdbd", margin: "0 10px" }}>
+            <ListItemText primary="BookMark" />
+          </Link>
+        </ListItem>{" "}
+        <ListItem>
+          <Link to="/profil" style={{ color: "#bdbdbd", margin: "0 10px" }}>
+            {" "}
+            <ListItemText primary="Profile" />
+          </Link>
+        </ListItem>
+        <ListItem>
+          <ListItemText
+            primary="Settings"
+            style={{ color: "#bdbdbd", margin: "0 10px" }}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemText
+            primary="Help"
+            style={{ color: "#bdbdbd", margin: "0 10px" }}
+          />
+        </ListItem>
+        <ListItem>
+          <ListItemText
+            primary="Sign Out"
+            style={{ color: "#bdbdbd", margin: "0 10px" }}
+          />
+        </ListItem>
+      </List>
     </Menu>
   );
 
@@ -144,6 +204,7 @@ export default function NavBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
+      {" "}
       <MenuItem>
         <IconButton aria-label="show 1 new mails" color="inherit">
           <Badge badgeContent={4} color="secondary">
@@ -166,7 +227,7 @@ export default function NavBar() {
           color="inherit"
         >
           <div className={classes.root}>
-            <Avatar className={classes.green}>R</Avatar>
+            <Avatar className={classes.green}>J</Avatar>
           </div>
         </IconButton>
       </MenuItem>
