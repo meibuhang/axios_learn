@@ -7,6 +7,7 @@ import Register from "./Register";
 import Login from "./Login";
 import OneZero from "./OneZero";
 import Bookmark from "./pages/Bookmark";
+import Profile from "./pages/Profil";
 import newStory from "./pages/NewStory";
 import Article from "./Article";
 import Comment from "./Comment";
@@ -97,6 +98,7 @@ class App extends Component {
           <Route path="/article" component={Article} />
           <Route path="/newstory" exact component={newStory} />
           <Route path="/bookmark" exact component={Bookmark} />
+          <Route path="/profil" exact component={Profile} />
           <Route path="/comment" exact component={Comment} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />

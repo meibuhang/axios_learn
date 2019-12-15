@@ -79,83 +79,83 @@ class RelatedArticle extends Component {
               <>
                 <Grid item xs={4}>
                   <Card style={{ margin: "0 10px 0 0" }}>
-                    <CardActionArea>
-                      <img
-                        src={relatedArticleData.data.articleImage}
-                        className="mediaPic"
-                      />
+                    <img
+                      src={relatedArticleData.data.articleImage}
+                      className="mediaPic"
+                    />
 
-                      <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                          {relatedArticleData.title}
-                        </Typography>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {relatedArticleData.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        {relatedArticleData.data.subtitle}
+                      </Typography>
+                    </CardContent>
+                    <Grid container item xs={12}>
+                      <Grid style={{ width: "55px" }}>
+                        <Avatar
+                          src={relatedArticleData.data.authorImage}
+                          className="avaPic"
+                        />
+                      </Grid>
+                      <Grid>
+                        <div className="authorDateRead">
+                          <Typography
+                            style={{
+                              fontSize: "10px",
+                              color: "#bdbdbd",
+                              textAlign: "left"
+                            }}
+                          >
+                            {relatedArticleData.data.postDate}
+                            <span>
+                              *{relatedArticleData.data.minRead} Min Read
+                            </span>
+                          </Typography>
+                          <Typography
+                            style={{ fontSize: "10px", color: "#bdbdbd" }}
+                          >
+                            {relatedArticleData.data.author}
+                            <span> {relatedArticleData.data.category}</span>
+                          </Typography>
+                        </div>
+                      </Grid>
+                      {/* claps */}
+                      <Grid
+                        container
+                        item
+                        style={{
+                          width: "110px",
+                          marginLeft: "20px",
+                          alignItem: "flex-end"
+                        }}
+                      >
+                        <IconButton>
+                          <img
+                            src={require("../img/clapping.png")}
+                            width="15px"
+                          />
+                        </IconButton>
                         <Typography
-                          variant="body2"
+                          variant="caption"
                           color="textSecondary"
                           component="p"
+                          style={{ paddingTop: "15px" }}
                         >
-                          {relatedArticleData.data.subtitle}
+                          {relatedArticleData.data.totalClaps}
                         </Typography>
-                      </CardContent>
-                      <Grid container item xs={12}>
-                        <Grid style={{ width: "55px" }}>
-                          <Avatar
-                            src={relatedArticleData.data.authorImage}
-                            className="avaPic"
-                          />
-                        </Grid>
-                        <Grid>
-                          <div className="authorDateRead">
-                            <Typography
-                              style={{
-                                fontSize: "10px",
-                                color: "#bdbdbd",
-                                textAlign: "left"
-                              }}
-                            >
-                              {relatedArticleData.data.postDate}
-                              <span>
-                                *{relatedArticleData.data.minRead} Min Read
-                              </span>
-                            </Typography>
-                            <Typography
-                              style={{ fontSize: "10px", color: "#bdbdbd" }}
-                            >
-                              {relatedArticleData.data.author}
-                              <span> {relatedArticleData.data.category}</span>
-                            </Typography>
-                          </div>
-                        </Grid>
-                        {/* claps */}
-                        <Grid
-                          container
-                          item
-                          style={{
-                            width: "110px"
-                          }}
-                        >
-                          <IconButton>
-                            <img
-                              src={require("../img/clapping.png")}
-                              width="15px"
-                            />
-                          </IconButton>
-                          <Typography
-                            variant="caption"
-                            color="textSecondary"
-                            component="p"
-                            style={{ paddingTop: "15px" }}
-                          >
-                            54K
-                          </Typography>
 
-                          {/* saved */}
-                          <IconButton>
-                            <BookmarkBorderIcon size="small" />
-                          </IconButton>
-                        </Grid>
+                        {/* saved */}
+                        <IconButton>
+                          <BookmarkBorderIcon size="small" />
+                        </IconButton>
                       </Grid>
-                    </CardActionArea>
+                    </Grid>
                   </Card>
                 </Grid>
               </>

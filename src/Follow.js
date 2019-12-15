@@ -118,7 +118,7 @@ export default function Follow() {
                   <img src={require("./img/clapping.png")} width="80%" />
                 </IconButton>
               </Grid>
-              <Grid item xs={2} style={{ marginTop: "15px" }}>
+              <Grid item xs={3} style={{ marginTop: "15px" }}>
                 <Typography
                   variant="caption"
                   component="h2"
@@ -128,10 +128,13 @@ export default function Follow() {
                 </Typography>
               </Grid>
               {/* FOLOW */}
-              <Grid item xs={8} style={{ textAlign: "right" }}>
+              <Grid item xs={7} style={{ textAlign: "right" }}>
                 {" "}
-                <div style={{ alignItems: "right" }} className="social-follow">
-                  <IconButton style={{ color: "#000000", marginLeft: "30px" }}>
+                <div
+                  style={{ alignItems: "right", marginLeft: "100px" }}
+                  className="social-follow"
+                >
+                  <IconButton style={{ color: "#000000" }}>
                     <TwitterIcon />
                   </IconButton>
                   <IconButton style={{ color: "#000000" }}>

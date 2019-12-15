@@ -1,0 +1,25 @@
+.root {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.containers {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bottomRoot {}
+
+.tabs {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    color: "#bdbdbd";
+}
+
+.tabBox {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
