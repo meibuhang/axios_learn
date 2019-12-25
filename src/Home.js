@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 // import request from './api/request';
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
@@ -99,17 +99,16 @@ export default function Home() {
   //   ? []
   //   : data.articles
 
-  
-  const [data, setData] = useState({articles:[]});
-  const API = 'http://localhost:8080/api/article/allarticles'
+  const [data, setData] = useState({ articles: [] });
+  const API = "http://localhost:8080/api/article/category/latestarticles";
   useEffect(() => {
-   const fetchData = async () => {
-  const result = await axios.get (API);
-  console.log(result);
-  setData({articles:result.data.articles}); 
-  };
-  fetchData();
-},[]);
+    const fetchData = async () => {
+      const result = await axios.get(API);
+      console.log(result);
+      setData({ articles: result.data.articles });
+    };
+    fetchData();
+  }, []);
   const classes = useStyles();
   const picNetWork = networkAvatar();
   return (
@@ -119,7 +118,6 @@ export default function Home() {
         <Grid container spacing={2} id="grids">
           <Grid item xs={4}>
             <Paper>
-               
               <div className="firstCard">
                 <img
                   src="https://unsplash.it/800/600?image=87"
@@ -224,39 +222,30 @@ export default function Home() {
         <Grid container spacing={2}>
           <Grid item xs={7}>
             <Grid>
-            
+              {data &&
+                data.articles.map(item => (
+                  <Paper>
+                    <div className="midle">
+                      <Grid>
+                        <div className="titleArticle">
+                          <Typography variant="h6" component="h6" align="left">
+                            {item.title}
+                          </Typography>
+                          <p>{item.content.substring(0, 200)}</p>
 
-              {data && data.articles.map(item =>(
-             <Paper>
-             <div className="midle">
-               <Grid>
-                 <div className="titleArticle">
-                   <Typography variant="h6" component="h6" align="left">
-                   {item.title}
-                   </Typography>
-                   <p>
-                   {item.content.substring(0,200)}
-                   </p>
-      
-                   <div className="author">
-                     <span> {item.users.fullname}</span>
-                   </div>
-                   <div className="dateTime">
-                   { item.createdAt.substring(0,10)} <span> *7 Min Read*</span>
-                   </div>
-                 </div>
-               </Grid>
-               <img
-                 src={item.image}
-                 className="mediaSection"
-               />
-             </div>
-           </Paper>
-              ))}
-          
-           
-           
-             
+                          <div className="author">
+                            <span> {item.users.fullname}</span>
+                          </div>
+                          <div className="dateTime">
+                            {item.createdAt.substring(0, 10)}{" "}
+                            <span> *7 Min Read*</span>
+                          </div>
+                        </div>
+                      </Grid>
+                      <img src={item.image} className="mediaSection" />
+                    </div>
+                  </Paper>
+                ))}
             </Grid>
           </Grid>
 
