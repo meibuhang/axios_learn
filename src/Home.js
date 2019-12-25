@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+// import request from './api/request';
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -6,7 +8,6 @@ import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import Avatar from "@material-ui/core/Avatar";
-import Container from "@material-ui/core/Container";
 import Header from "./component/Header";
 import CardContent from "@material-ui/core/CardContent";
 
@@ -79,7 +80,36 @@ const LatestUpdateArticleList = [
   }
 ];
 
+// function ArticleList ({ articles }) {
+//   return (
+//     <div>
+//       {articles.map(article => (
+//         <div key={article.id}>
+//           {article.title}
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
 export default function Home() {
+  // const { data, error } = useSWR('articleApi.getUserArticles', articleApi.getLastestArticles)
+
+  // const article = data === undefined
+  //   ? []
+  //   : data.articles
+
+  
+  const [data, setData] = useState({articles:[]});
+  const API = 'http://localhost:8080/api/article/allarticles'
+  useEffect(() => {
+   const fetchData = async () => {
+  const result = await axios.get (API);
+  console.log(result);
+  setData({articles:result.data.articles}); 
+  };
+  fetchData();
+},[]);
   const classes = useStyles();
   const picNetWork = networkAvatar();
   return (
@@ -89,6 +119,7 @@ export default function Home() {
         <Grid container spacing={2} id="grids">
           <Grid item xs={4}>
             <Paper>
+               
               <div className="firstCard">
                 <img
                   src="https://unsplash.it/800/600?image=87"
@@ -193,91 +224,39 @@ export default function Home() {
         <Grid container spacing={2}>
           <Grid item xs={7}>
             <Grid>
-              <Paper>
-                <div className="midle">
-                  <Grid>
-                    <div className="titleArticle">
-                      <Typography variant="h6" component="h6" align="left">
-                        How to Remove Array Duplicates in ES6
-                      </Typography>
-                      <p>
-                        Lizards are a widespread group of squamate reptiles,
-                        with over 6,000 species, ranging across all continents
-                        except Antarctica
-                      </p>
+            
 
-                      <div className="author">
-                        <span>Arfat Salman in codeburst</span>
-                      </div>
-                      <div className="dateTime">
-                        Mar 24, 2018 <span>7 Min Read</span>
-                      </div>
-                    </div>
-                  </Grid>
-                  <img
-                    src="https://unsplash.it/800/600?image=32"
-                    className="mediaSection"
-                  />
-                </div>
-              </Paper>
-              <Grid>
-                <Paper>
-                  <div className="midle">
-                    <Grid>
-                      <div className="titleArticle">
-                        <Typography variant="h6" component="h6" align="left">
-                          How to Remove Array Duplicates in ES6
-                        </Typography>
-                        <p>
-                          Lizards are a widespread group of squamate reptiles,
-                          with over 6,000 species, ranging across all continents
-                          except Antarctica
-                        </p>
-
-                        <div className="author">
-                          <span>Arfat Salman in codeburst</span>
-                        </div>
-                        <div className="dateTime">
-                          Mar 24, 2018 <span>7 Min Read</span>
-                        </div>
-                      </div>
-                    </Grid>
-                    <img
-                      src="https://unsplash.it/800/600?image=11"
-                      className="mediaSection"
-                    />
-                  </div>
-                </Paper>
-              </Grid>
-              <Grid>
-                <Paper>
-                  <div className="midle">
-                    <Grid>
-                      <div className="titleArticle">
-                        <Typography variant="h6" component="h6" align="left">
-                          How to Remove Array Duplicates in ES6
-                        </Typography>
-                        <p>
-                          Lizards are a widespread group of squamate reptiles,
-                          with over 6,000 species, ranging across all continents
-                          except Antarctica
-                        </p>
-
-                        <div className="author">
-                          <span>Arfat Salman in codeburst</span>
-                        </div>
-                        <div className="dateTime">
-                          Mar 24, 2018 <span>7 Min Read</span>
-                        </div>
-                      </div>
-                    </Grid>
-                    <img
-                      src="https://source.unsplash.com/collection/190727/1600x900"
-                      className="mediaSection"
-                    />
-                  </div>
-                </Paper>
-              </Grid>
+              {data && data.articles.map(item =>(
+             <Paper>
+             <div className="midle">
+               <Grid>
+                 <div className="titleArticle">
+                   <Typography variant="h6" component="h6" align="left">
+                   {item.title}
+                   </Typography>
+                   <p>
+                   {item.content.substring(0,200)}
+                   </p>
+      
+                   <div className="author">
+                     <span> {item.users.fullname}</span>
+                   </div>
+                   <div className="dateTime">
+                   { item.createdAt.substring(0,10)} <span> *7 Min Read*</span>
+                   </div>
+                 </div>
+               </Grid>
+               <img
+                 src={item.image}
+                 className="mediaSection"
+               />
+             </div>
+           </Paper>
+              ))}
+          
+           
+           
+             
             </Grid>
           </Grid>
 

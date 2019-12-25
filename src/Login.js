@@ -10,6 +10,7 @@ import LockIcon from "@material-ui/icons/Lock";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 
+import * as auth from './api/auth';
 import Container from "@material-ui/core/Container";
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -24,7 +25,7 @@ const bgform = {
   backgroundPosition: "50% 50%"
 };
 
-export default function Register() {
+ function LoginForm({onSubmit}) {
   const classes = useStyles();
 
   return (
@@ -42,13 +43,16 @@ export default function Register() {
               </div>
             </div>
             <div className="Register">
-              <FormControl>
-                <form noValidate autoComplete="off">
+             
+                <form noValidate autoComplete="off" onSubmit={(event)=>{
+                  event.preventDefault();
+                  onSubmit(event)
+                }}>
                   <TextField
                     className={classes.margin}
-                    label="Email"
-                    name="email"
-                    type="email"
+                    label="username"
+                    name="username"
+                    type="text"
                     InputProps={{
                       startAdornment: (
                         <InputAdornment position="start">
@@ -82,7 +86,7 @@ export default function Register() {
                     Login
                   </Button>
                 </form>
-              </FormControl>
+             
 
               <div className="tagForm">
                 <p>
@@ -105,4 +109,30 @@ export default function Register() {
       </div>
     </Container>
   );
+}
+export default class Login extends React.Component {
+  handleSubmit = (event) => {
+    const username = event.target.username.value;
+    const password = event.target.password.value;
+
+    auth.login({ username, password })
+      .then(() => {
+        this.props.history.push('/home');//direct halaman
+      })
+      .catch((error) => {
+        alert('Gagal login')
+
+        throw error;
+      });
+  }
+
+  render() {
+    return (
+      <div>
+        <LoginForm 
+          onSubmit={this.handleSubmit}
+        />
+      </div>
+    );
+  }
 }

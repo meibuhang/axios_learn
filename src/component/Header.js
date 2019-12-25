@@ -1,21 +1,44 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import { Link } from "react-router-dom";
 import NavBar from "../NavBar";
 import Button from "@material-ui/core/Button";
 import ScrollMenu from "react-horizontal-scrolling-menu";
 
+
 const Header = ({ onlyNavbar = false }) => {
   const [selected, setSelected] = useState("");
 
-  // list of items
-  const list = [
-    { name: "Home", target: "/home" },
-    { name: "OneZero", target: "/onezero" },
-    { name: "Login", target: "/login" },
-    { name: "Register", target: "/register" },
-    { name: "Article", target: "/article" }
-  ];
+  const instance = axios.create({baseURL: 'http://localhost:8080'})
+  const [data, setData] = useState({category:[]});
+  const API = '/api/allcategory'
+  useEffect(() => {
+   const fetchData = async () => {
+  const result = await instance.get (API);
+ 
+  setData({category:result.data.category}); 
+ 
+};
+fetchData();
+},[]);
 
+const list = data.category.map(function(item){
+  return {
+    name : item.name,
+    target :("/", item.name)
+  }
+})
+  
+   
+           
+
+  // const list = [
+  //   { name: "Home", target: "/Home" },
+  //   { name: "OneZero", target: "/onezero" },
+  //   { name: "Login", target: "/login" },
+  //   { name: "Register", target: "/register" },
+  //   { name: "Article", target: "/article" }
+  // ];
   // One item component
   // selected prop will be passed
   const MenuItem = ({ btnName, target, selected }) => {
@@ -31,9 +54,9 @@ const Header = ({ onlyNavbar = false }) => {
   // All items component
   // Important! add unique key
   const Menu = (list, selected) =>
-    list.map(item => {
-      const name = item.name;
-      const target = item.target;
+    list.map(items => {
+      const name = items.name;
+      const target = ("/"+items.target)
 
       return (
         <MenuItem
@@ -75,11 +98,16 @@ const Header = ({ onlyNavbar = false }) => {
               selected={selected}
               onSelect={onSelect}
             />
+           {/* {
+data.category.map(item =>(
+  <div><h1>{item.name}
+    </h1></div>))
+           }  */}
           </div>
         </div>
       )}
     </div>
   );
-};
+          };
 
 export default Header;
